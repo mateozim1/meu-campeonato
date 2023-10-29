@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('times', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('pontos');
-            $table->string('classifica');
-            $table->unsignedBigInteger('usu_criacao');
+            $table->integer('pontos');
+            $table->string('classifica')->nullable()->default();
+            $table->integer('usu_criacao');
             $table->foreign('usu_criacao')->references('id')->on('users');
             $table->timestamps();
         });
