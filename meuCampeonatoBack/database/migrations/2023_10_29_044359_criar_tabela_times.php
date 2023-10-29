@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('pontos');
+            $table->string('classifica');
+            $table->unsignedBigInteger('usu_criacao');
+            $table->foreign('usu_criacao')->references('id')->on('users');
             $table->timestamps();
         });
     }
